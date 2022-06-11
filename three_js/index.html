@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="300" height="300"></canvas>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.138.3/build/three.module.js",
+          "GLTFLoader": "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js"
+        }
+      }
+    </script>
+    <script type="module">
+      // 모듈 임포팅
+      import { GLTFLoader } from "GLTFLoader";
+      import * as THREE from "three";
+      import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.124/examples/jsm/controls/OrbitControls.js";
+
+      //
+      let scene = new THREE.Scene();
+
+      let renderer = new THREE.WebGLRenderer({
+        canvas: document.querySelector("#canvas"),
+        antialias: true,
+      });
+      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      let camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      camera.position.set(0, 2, 5);
+
+      scene.background = new THREE.Color("skyblue");
+      let PLight = new THREE.PointLight();
+      let ALight = new THREE.AmbientLight();
+      PLight.position.set(50, 50, 50);
+      scene.add(PLight, ALight);
+
+      let controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.rotateSpeed = 1.0;
+      controls.zoomSpeed = 1.2;
+
+      let loader = new GLTFLoader();
+      loader.load("duck/scene.gltf", function (gltf) {
+        scene.add(gltf.scene);
+        renderer.render(scene, camera);
+
+        function animate() {
+          requestAnimationFrame(animate);
+          gltf.scene.rotation.y += 0.005;
+          renderer.render(scene, camera);
+          controls.update();
+        }
+        animate();
+      });
+    </script>
+  </body>
+</html>

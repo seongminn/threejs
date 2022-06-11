@@ -1,0 +1,11 @@
+Model Information:
+* title:	Duck duck duck
+* source:	https://sketchfab.com/3d-models/duck-duck-duck-faf58bd8859744a2ac73719fefc5b454
+* author:	RafaelScopel (https://sketchfab.com/RafaelScopel)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Duck duck duck" (https://sketchfab.com/3d-models/duck-duck-duck-faf58bd8859744a2ac73719fefc5b454) by RafaelScopel (https://sketchfab.com/RafaelScopel) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,6 +1,14 @@
 # Three.js
 
-React.js 환경에서 Three.js 활용하기
+## Three.js 활용하기
+
+> 회전하는 오리
+
+![Duck](https://user-images.githubusercontent.com/88662637/173176371-30054b38-479f-41da-bf1d-1576c72794a5.jpg)
+
+<br />
+
+## React.js 환경에서 Three.js 활용하기
 
 > 회전하는 정육면체
 
