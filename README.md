@@ -1,6 +1,6 @@
 # Three.js
 
-## Three.js 활용하기
+## Three.js 활용하기(Javascript)
 
 > 회전하는 오리
 
